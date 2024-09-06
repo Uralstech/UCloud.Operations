@@ -5,13 +5,13 @@
         {
           "src": "../UCloud.Operations",
           "files": [
-            "**/*.csproj"
+            "Packages/com.uralstech.ucloud.operations/Runtime/**/*.cs"
           ]
         }
       ],
       "dest": "api",
       "filter": "filterConfig.yml",
-      "includePrivateMembers": true
+      "allowCompilationErrors": true
     }
   ],
   "build": {

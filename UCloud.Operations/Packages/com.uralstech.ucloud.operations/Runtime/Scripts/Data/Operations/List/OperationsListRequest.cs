@@ -6,6 +6,11 @@
     public class OperationsListRequest : IOperationsGetRequest
     {
         /// <summary>
+        /// The conditions for filtering the operations to list.
+        /// </summary>
+        public OperationFilterConditions Filters;
+
+        /// <summary>
         /// The maximum number of <see cref="Operation"/>s to return (per page).
         /// </summary>
         /// <remarks>
@@ -22,8 +27,17 @@
         public string GetEndpointUri()
         {
             return string.IsNullOrEmpty(PageToken)
-                ? $"https://servicemanagement.googleapis.com/v1/operations?pageSize={MaxResponseOperations}"
-                : $"https://servicemanagement.googleapis.com/v1/operations?pageSize={MaxResponseOperations}&pageToken={PageToken}";
+                ? $"https://servicemanagement.googleapis.com/v1/operations?filter={Filters}&pageSize={MaxResponseOperations}"
+                : $"https://servicemanagement.googleapis.com/v1/operations?filter={Filters}&pageSize={MaxResponseOperations}&pageToken={PageToken}";
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="OperationsListRequest"/>.
+        /// </summary>
+        /// <param name="filters">The conditions for filtering the operations to list.</param>
+        public OperationsListRequest(OperationFilterConditions filters)
+        {
+            Filters = filters;
         }
     }
 }

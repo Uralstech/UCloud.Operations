@@ -1,4 +1,6 @@
-﻿namespace Uralstech.UCloud.Operations
+﻿using Newtonsoft.Json;
+
+namespace Uralstech.UCloud.Operations
 {
     /// <summary>
     /// Conditions to filter operations by.
@@ -25,7 +27,7 @@
         {
             return Operator == OperationFilterOperator.None
                 ? OperandA.ToString()
-                : $"{OperandA}{Operator}{OperandB}";
+                : $"{OperandA}{JsonConvert.SerializeObject(Operator)[1..^1]}{OperandB}";
         }
     }
 }

@@ -37,9 +37,9 @@ namespace Uralstech.UCloud.Operations
         {
             return this switch
             {
-                { Field: not FilteringField.None } => JsonConvert.SerializeObject(Field),
+                { Field: not FilteringField.None } => JsonConvert.SerializeObject(Field)[1..^1],
                 { StartTime: not null } => StartTime.Value.ToString("O"),
-                { Status: not OperationRunningStatus.None } => JsonConvert.SerializeObject(Status),
+                { Status: not OperationRunningStatus.None } => JsonConvert.SerializeObject(Status)[1..^1],
                 _ when !string.IsNullOrEmpty(ServiceName) => ServiceName,
                 _ => throw new NullReferenceException($"Expected at least one field to set in instance of {nameof(OperationFilterConditionOperand)}")
             };

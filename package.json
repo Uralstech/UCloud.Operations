@@ -1,0 +1,30 @@
+{
+  "name": "com.uralstech.ucloud.operations",
+  "displayName": "UCloud.Operations",
+  "description": "UCloud.Operations: A Unity C# wrapper for the google.longrunning API.",
+  "keywords": [
+    "API",
+    "Google",
+    "Cloud",
+    "Integration"
+  ],
+  "version": "1.0.0-preview.1",
+  "unity": "2022.3",
+  "hideInEditor": false,
+  "documentationUrl": "https://github.com/Uralstech/UCloud.Operations/blob/master/UCloud.Operations/Packages/com.uralstech.ucloud.operations/Documentation~/README.md",
+  "changelogUrl": "https://github.com/Uralstech/UCloud.Operations/releases",
+  "licensesUrl": "https://github.com/Uralstech/UCloud.Operations/blob/master/LICENSE",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Uralstech/UCloud.Operations.git"
+  },
+  "author": {
+    "name": "Udayshankar Ravikumar",
+    "url": "https://github.com/Uralstech"
+  },
+  "samples": [],
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  }
+}

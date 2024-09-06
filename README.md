@@ -9,7 +9,7 @@ A Unity C# wrapper for the google.longrunning API.
 
 This *should* work on any reasonably modern Unity version. Built and tested in Unity 2022.3.29f1.
 
-# [OpenUPM](#tab/openupm)
+### OpenUPM
 
 1. Open project settings
 2. Select `Package Manager`
@@ -22,21 +22,19 @@ This *should* work on any reasonably modern Unity version. Built and tested in U
 5. Change the registry from `Unity` to `My Registries`
 6. Add the `UCloud.Operations` package
 
-# [Unity Package Manager](#tab/upm)
+### Unity Package Manager
 
 1. Open the Unity Package Manager window (`Window` -> `Package Manager`)
 2. Select the `+` icon and `Add package from git URL...`
 3. Paste the UPM branch URL and press enter:
     - `https://github.com/Uralstech/UCloud.Operations.git#upm`
 
-# [GitHub Clone](#tab/github)
+### GitHub Clone
 
 1. Clone or download the repository from the desired branch (master, preview/unstable)
 2. Drag the package folder `UCloud.Operations/UCloud.Operations/Packages/com.uralstech.ucloud.operations` into your Unity project's `Packages` folder
 3. In the `Packages` folder of your project, add the following line to the list in `manifest.json`:
     `"com.uralstech.ucloud.operations": "1.x.x",`
-
----
 
 ## Preview Versions
 

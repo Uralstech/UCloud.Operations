@@ -151,6 +151,13 @@
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       }
     },
+    "com.uralstech.utils.singleton": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

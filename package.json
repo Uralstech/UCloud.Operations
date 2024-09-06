@@ -11,7 +11,7 @@
   "version": "1.0.0-preview.1",
   "unity": "2022.3",
   "hideInEditor": false,
-  "documentationUrl": "https://github.com/Uralstech/UCloud.Operations/blob/master/UCloud.Operations/Packages/com.uralstech.ucloud.operations/Documentation~/README.md",
+  "documentationUrl": "https://uralstech.github.io/UCloud.Operations/",
   "changelogUrl": "https://github.com/Uralstech/UCloud.Operations/releases",
   "licensesUrl": "https://github.com/Uralstech/UCloud.Operations/blob/master/LICENSE",
   "license": "Apache-2.0",
@@ -25,6 +25,7 @@
   },
   "samples": [],
   "dependencies": {
+    "com.uralstech.utils.singleton": "1.0.0",
     "com.unity.nuget.newtonsoft-json": "3.2.1"
   }
 }

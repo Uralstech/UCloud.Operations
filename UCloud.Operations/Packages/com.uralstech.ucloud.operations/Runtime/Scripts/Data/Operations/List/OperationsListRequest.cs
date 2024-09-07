@@ -24,11 +24,14 @@
         public string PageToken = string.Empty;
 
         /// <inheritdoc/>
+        public string BaseServiceUri { get; set; } = "https://servicemanagement.googleapis.com/v1";
+
+        /// <inheritdoc/>
         public string GetEndpointUri()
         {
             return string.IsNullOrEmpty(PageToken)
-                ? $"https://servicemanagement.googleapis.com/v1/operations?filter={Filters}&pageSize={MaxResponseOperations}"
-                : $"https://servicemanagement.googleapis.com/v1/operations?filter={Filters}&pageSize={MaxResponseOperations}&pageToken={PageToken}";
+                ? $"{BaseServiceUri}/operations?filter={Filters}&pageSize={MaxResponseOperations}"
+                : $"{BaseServiceUri}/operations?filter={Filters}&pageSize={MaxResponseOperations}&pageToken={PageToken}";
         }
 
         /// <summary>

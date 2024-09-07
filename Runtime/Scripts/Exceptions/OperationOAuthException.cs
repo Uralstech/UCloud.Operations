@@ -24,7 +24,7 @@ namespace Uralstech.UCloud.Operations.Exceptions
         /// <param name="webRequest">The request that caused the exception.</param>
         internal OperationOAuthException(UnityWebRequest webRequest, string reason)
             : base($"Failed to authenticate google.longrunning API request: " +
-                  $"Request Endpoint: {webRequest.uri.AbsolutePath} | " +
+                  $"Request Endpoint: {webRequest.uri.AbsoluteUri} | " +
                   $"Reason:\n{reason}")
         {
             RequestEndpoint = webRequest.uri;

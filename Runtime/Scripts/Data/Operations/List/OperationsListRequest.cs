@@ -1,7 +1,7 @@
 ﻿namespace Uralstech.UCloud.Operations
 {
     /// <summary>
-    /// Requests metadata for an operation. Return type is <see cref="OperationsListResponse"/> or <see cref="Generic.OperationsListResponse{TMetadata, TResponse}"/>.
+    /// Requests metadata for an operation. Return type is <see cref="OperationsListResponse"/> or <see cref="Generic.OperationsListResponse{TOperation}"/>.
     /// </summary>
     public class OperationsListRequest : IOperationsGetRequest
     {

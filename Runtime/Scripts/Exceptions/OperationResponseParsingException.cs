@@ -22,6 +22,19 @@ namespace Uralstech.UCloud.Operations.Exceptions
         /// Creates a new <see cref="OperationResponseParsingException"/>.
         /// </summary>
         /// <param name="webRequest">The request that caused the exception.</param>
+        internal OperationResponseParsingException(UnityWebRequest webRequest)
+            : base($"Failed to parse google.longrunning API response: " +
+                  $"Request Endpoint: {webRequest.uri.AbsolutePath} | " +
+                  $"Downloaded Text:\n{webRequest.downloadHandler?.text}")
+        {
+            RequestEndpoint = webRequest.uri;
+            DownloadedText = webRequest.downloadHandler?.text;
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="OperationResponseParsingException"/>.
+        /// </summary>
+        /// <param name="webRequest">The request that caused the exception.</param>
         /// <param name="innerException">The inner exception that caused this one.</param>
         internal OperationResponseParsingException(UnityWebRequest webRequest, Exception innerException)
             : base($"Failed to parse google.longrunning API response: " +

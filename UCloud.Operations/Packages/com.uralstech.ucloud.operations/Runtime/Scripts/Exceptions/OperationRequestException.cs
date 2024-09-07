@@ -34,7 +34,7 @@ namespace Uralstech.UCloud.Operations.Exceptions
         /// <param name="webRequest">The request that caused the exception.</param>
         internal OperationRequestException(UnityWebRequest webRequest)
             : base($"Failed google.longrunning API request: " +
-                  $"Request Endpoint: {webRequest.uri.AbsolutePath} | " +
+                  $"Request Endpoint: {webRequest.uri.AbsoluteUri} | " +
                   $"Request Error Code: {webRequest.responseCode} | " +
                   $"Request Error: {webRequest.error} | " +
                   $"Details:\n{webRequest.downloadHandler?.text}")

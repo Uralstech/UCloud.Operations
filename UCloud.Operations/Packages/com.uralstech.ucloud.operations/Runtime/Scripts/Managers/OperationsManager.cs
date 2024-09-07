@@ -15,12 +15,17 @@ namespace Uralstech.UCloud.Operations
     public class OperationsManager : Singleton<OperationsManager>
     {
         /// <summary>
+        /// An empty JSON object.
+        /// </summary>
+        private const string EmptyJsonObject = "{}";
+
+        /// <summary>
         /// Computes a GET request on the google.longrunning API.
         /// </summary>
         /// 
         /// <typeparam name="TResponse">
         /// The response type. For example, a request of type <see cref="OperationsListRequest"/> corresponds
-        /// to a response type of <see cref="OperationsListResponse"/> or <see cref="Generic.OperationsListResponse{TMetadata, TResponse}"/>.
+        /// to a response type of <see cref="OperationsListResponse"/> or <see cref="Generic.OperationsListResponse{TOperation}"/>.
         /// </typeparam>
         /// 
         /// <param name="accessToken">The OAuth Access Token to use for authentication.</param>
@@ -37,6 +42,42 @@ namespace Uralstech.UCloud.Operations
             await ComputeRequest(accessToken, webRequest);
 
             return ConfirmResponse<TResponse>(webRequest);
+        }
+
+        /// <summary>
+        /// Computes a DELETE request on the google.longrunning API.
+        /// </summary>
+        /// <param name="accessToken">The OAuth Access Token to use for authentication.</param>
+        /// <param name="request">The request object.</param>
+        /// <exception cref="OperationOAuthException">Thrown if the request could not be authenticated.</exception>
+        /// <exception cref="OperationRequestException">Thrown if the API request fails.</exception>
+        /// <exception cref="OperationResponseParsingException">Thrown if the response could not be parsed.</exception>
+        public async Task Request(string accessToken, IOperationsDeleteRequest request)
+        {
+            string requestEndpoint = request.GetEndpointUri();
+
+            using UnityWebRequest webRequest = UnityWebRequest.Delete(requestEndpoint);
+            await ComputeRequest(accessToken, webRequest);
+
+            ConfirmResponse(webRequest);
+        }
+
+        /// <summary>
+        /// Computes an empty POST request on the google.longrunning API.
+        /// </summary>
+        /// <param name="accessToken">The OAuth Access Token to use for authentication.</param>
+        /// <param name="request">The request object.</param>
+        /// <exception cref="OperationOAuthException">Thrown if the request could not be authenticated.</exception>
+        /// <exception cref="OperationRequestException">Thrown if the API request fails.</exception>
+        /// <exception cref="OperationResponseParsingException">Thrown if the response could not be parsed.</exception>
+        public async Task Request(string accessToken, IOperationsPostRequest request)
+        {
+            string requestEndpoint = request.GetEndpointUri();
+
+            using UnityWebRequest webRequest = UnityWebRequest.Post(requestEndpoint, string.Empty, "application/json");
+            await ComputeRequest(accessToken, webRequest);
+
+            ConfirmResponse(webRequest);
         }
 
         /// <summary>
@@ -103,6 +144,20 @@ namespace Uralstech.UCloud.Operations
             {
                 Debug.LogError($"Failed to confirm successful API response:\n{e}");
                 throw new OperationResponseParsingException(request, e);
+            }
+        }
+
+        /// <summary>
+        /// Checks if the downloaded response was empty, as to be expected of some endpoints.
+        /// </summary>
+        /// <param name="request">The web request.</param>
+        /// <exception cref="OperationResponseParsingException">Thrown if the response was not empty.</exception>
+        private void ConfirmResponse(UnityWebRequest request)
+        {
+            if (!string.IsNullOrEmpty(request.downloadHandler?.text) || request.downloadHandler.text.Trim() == EmptyJsonObject)
+            {
+                Debug.LogError($"Failed to confirm successful API response:\n{request.downloadHandler?.text}");
+                throw new OperationResponseParsingException(request);
             }
         }
     }

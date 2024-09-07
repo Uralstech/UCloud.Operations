@@ -58,6 +58,24 @@ namespace Uralstech.UCloud.Operations
         }
 
         /// <summary>
+        /// Computes an empty POST request on the google.longrunning API.
+        /// </summary>
+        /// <param name="accessToken">The OAuth Access Token to use for authentication.</param>
+        /// <param name="request">The request object.</param>
+        /// <exception cref="OperationOAuthException">Thrown if the request could not be authenticated.</exception>
+        /// <exception cref="OperationRequestException">Thrown if the API request fails.</exception>
+        /// <exception cref="OperationResponseParsingException">Thrown if the response could not be parsed.</exception>
+        public async Task Request(string accessToken, IOperationsPostRequest request)
+        {
+            string requestEndpoint = request.GetEndpointUri();
+
+            using UnityWebRequest webRequest = UnityWebRequest.Post(requestEndpoint, string.Empty, "application/json");
+            await ComputeRequest(accessToken, webRequest);
+
+            ConfirmResponse(webRequest);
+        }
+
+        /// <summary>
         /// Sets up, sends and verifies a <see cref="UnityWebRequest"/>.
         /// </summary>
         /// <param name="accessToken">The OAuth Access Token to use for authentication.</param>

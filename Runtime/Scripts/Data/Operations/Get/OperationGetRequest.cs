@@ -14,9 +14,12 @@
         public string OperationName;
 
         /// <inheritdoc/>
+        public string BaseServiceUri { get; set; } = "https://servicemanagement.googleapis.com/v1";
+
+        /// <inheritdoc/>
         public string GetEndpointUri()
         {
-            return $"https://servicemanagement.googleapis.com/v1/{OperationName}";
+            return $"{BaseServiceUri}/{OperationName}";
         }
 
         /// <summary>

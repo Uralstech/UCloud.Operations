@@ -154,7 +154,7 @@ namespace Uralstech.UCloud.Operations
         /// <exception cref="OperationResponseParsingException">Thrown if the response was not empty.</exception>
         private void ConfirmResponse(UnityWebRequest request)
         {
-            if (!string.IsNullOrEmpty(request.downloadHandler?.text) || request.downloadHandler.text.Trim() == EmptyJsonObject)
+            if (!string.IsNullOrEmpty(request.downloadHandler?.text) && request.downloadHandler.text.Trim() != EmptyJsonObject)
             {
                 Debug.LogError($"Failed to confirm successful API response:\n{request.downloadHandler?.text}");
                 throw new OperationResponseParsingException(request);

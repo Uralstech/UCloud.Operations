@@ -48,4 +48,4 @@ Do not use preview versions (i.e. versions that end with "-preview") for product
 
 ## Documentation
 
-See <https://uralstech.github.io/UCloud.Operations/DocSource/QuickStart.html> or `APIReferenceManual.pdf` and `Documentation.pdf` in the package documentation for the reference manual and tutorial.
+See <https://uralstech.github.io/UCloud.Operations/DocSource/QuickStart.html> or `APIReferenceManual.pdf` in the package documentation for the reference manual and tutorial.

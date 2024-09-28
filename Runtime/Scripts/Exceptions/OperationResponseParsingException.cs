@@ -24,7 +24,7 @@ namespace Uralstech.UCloud.Operations.Exceptions
         /// <param name="webRequest">The request that caused the exception.</param>
         internal OperationResponseParsingException(UnityWebRequest webRequest)
             : base($"Failed to parse google.longrunning API response: " +
-                  $"Request Endpoint: {webRequest.uri.AbsolutePath} | " +
+                  $"Request Endpoint: {webRequest.uri.AbsoluteUri} | " +
                   $"Downloaded Text:\n{webRequest.downloadHandler?.text}")
         {
             RequestEndpoint = webRequest.uri;

@@ -29,10 +29,19 @@
         /// <inheritdoc/>
         public string GetEndpointUri()
         {
-            return string.IsNullOrEmpty(PageToken)
+            string uri = Filters != null
                 ? $"{BaseServiceUri}/operations?filter={Filters}&pageSize={MaxResponseOperations}"
-                : $"{BaseServiceUri}/operations?filter={Filters}&pageSize={MaxResponseOperations}&pageToken={PageToken}";
+                : $"{BaseServiceUri}/operations?pageSize={MaxResponseOperations}";
+
+            if (!string.IsNullOrEmpty(PageToken))
+                uri += $"&pageToken={PageToken}";
+            return uri;
         }
+
+        /// <summary>
+        /// Creates a new <see cref="OperationsListRequest"/>.
+        /// </summary>
+        public OperationsListRequest() { }
 
         /// <summary>
         /// Creates a new <see cref="OperationsListRequest"/>.

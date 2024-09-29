@@ -28,6 +28,7 @@ This *should* work on any reasonably modern Unity version. Built and tested in U
 2. Select the `+` icon and `Add package from git URL...`
 3. Paste the UPM branch URL and press enter:
     - `https://github.com/Uralstech/UCloud.Operations.git#upm`
+4. Check the instructions for [`Utils.Singleton`](https://uralstech.github.io/Utils.Singleton) to install the dependency.
 
 ### GitHub Clone
 
@@ -35,6 +36,7 @@ This *should* work on any reasonably modern Unity version. Built and tested in U
 2. Drag the package folder `UCloud.Operations/UCloud.Operations/Packages/com.uralstech.ucloud.operations` into your Unity project's `Packages` folder
 3. In the `Packages` folder of your project, add the following line to the list in `manifest.json`:
     `"com.uralstech.ucloud.operations": "1.x.x",`
+4. Check the instructions for [`Utils.Singleton`](https://uralstech.github.io/Utils.Singleton) to install the dependency.
 
 ## Preview Versions
 

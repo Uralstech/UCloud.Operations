@@ -1,8 +1,7 @@
 pdfFileName: Documentation.pdf
-pdfTocPage: true
 pdf: true
 pdfPrintBackground: true
 
 items:
-- name: Quick Start
-  href: QuickStart.md
+- name: Documentation
+  href: Documentation.md

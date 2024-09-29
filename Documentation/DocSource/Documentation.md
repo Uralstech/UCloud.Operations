@@ -26,16 +26,7 @@ private async void RunOperationsListRequest(string oauthAccessToken)
     Debug.Log("Listing all operations.");
 
     OperationsListResponse response = await OperationsManager.Instance.Request<OperationsListResponse>(oauthAccessToken,
-        new OperationsListRequest(
-            new OperationFilterConditions()
-            {
-                OperandA = new OperationFilterConditionOperand { Field = FilteringField.Status },
-                Operator = OperationFilterOperator.EqualTo,
-                OperandB = new OperationFilterConditions
-                {
-                    OperandA = new OperationFilterConditionOperand { Status = OperationRunningStatus.Finished }
-                }
-            })
+        new OperationsListRequest() // From my testing, filters don't work for this service.
         {
             // This should be replaced with the base URI to the service you are using.
             // For example, if your service's operations endpoint is: abc.com/v1/operations,

@@ -7,7 +7,7 @@ A Unity C# wrapper for the google.longrunning API.
 
 ## Installation
 
-This *should* work on any reasonably modern Unity version. Built and tested in Unity 2022.3.29f1.
+This *should* work on any reasonably modern Unity version. Built and tested in Unity 6000.0.26f1 (Unity 6).
 
 ### OpenUPM
 

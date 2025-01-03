@@ -39,13 +39,13 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.uralstech.utils.singleton": "1.1.1",
+        "com.uralstech.utils.singleton": "1.2.1",
         "com.unity.nuget.newtonsoft-json": "3.2.1",
         "com.unity.modules.unitywebrequest": "1.0.0"
       }
     },
     "com.uralstech.utils.singleton": {
-      "version": "1.1.1",
+      "version": "1.2.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {},

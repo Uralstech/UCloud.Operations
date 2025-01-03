@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-﻿namespace Uralstech.UCloud.Operations
+namespace Uralstech.UCloud.Operations
 {
     /// <summary>
     /// Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed.

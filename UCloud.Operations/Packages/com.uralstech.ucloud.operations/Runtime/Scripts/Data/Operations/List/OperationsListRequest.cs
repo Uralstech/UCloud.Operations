@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-﻿namespace Uralstech.UCloud.Operations
+namespace Uralstech.UCloud.Operations
 {
     /// <summary>
     /// Requests metadata for an operation. Return type is <see cref="OperationsListResponse"/> or <see cref="Generic.OperationsListResponse{TOperation}"/>.

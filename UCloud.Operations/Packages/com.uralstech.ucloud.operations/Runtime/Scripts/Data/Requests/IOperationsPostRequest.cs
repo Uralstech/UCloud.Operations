@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-﻿namespace Uralstech.UCloud.Operations
+namespace Uralstech.UCloud.Operations
 {
     /// <summary>
     /// All google.longrunning API POST requests which don't have a request and response body must inherit from this interface.

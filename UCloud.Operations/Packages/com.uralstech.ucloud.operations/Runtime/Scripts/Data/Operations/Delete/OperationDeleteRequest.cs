@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-﻿namespace Uralstech.UCloud.Operations
+namespace Uralstech.UCloud.Operations
 {
     /// <summary>
     /// Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation.

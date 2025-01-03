@@ -21,5 +21,5 @@ namespace Uralstech.UCloud.Operations
     /// The response for an <see cref="OperationsListRequest"/> call.
     /// </summary>
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
-    public class OperationsListResponse : Generic.OperationsListResponse<Operation> {}
+    public class OperationsListResponse : Generic.OperationsListResponse<Operation> { }
 }
